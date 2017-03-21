@@ -1,3 +1,4 @@
-const Food = require("./models.js").Url
+var mongoose  = require("./connection.js");
+var seedData  = require("./seeds.js");
 
-const seedData = require("./seedData.json")
+var Food = mongoose.model("Food");

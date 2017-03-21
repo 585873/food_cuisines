@@ -1,10 +1,16 @@
-const express = require("express")
-const Food = require("./db/models.js").Food
+var express = require("express");
+var parser  = require("body-parser");
+var hbs     = require("express-handlebars");
+var mongoose = require("./db/connection.js");
 
-const app = express()
+var app     = express();
 
-app.set("view engine", "hbs")
+var Food = mongoose.model("Food");
 
-app.listen(3001, () =>{
-  console.log("express started on port 3001")
-})
+app.set("port", process.env.PORT || 3001);
+app.set("view engine", "hbs");
+
+
+app.listen(app.get("port"), function(){
+  console.log("It's aliiive!");
+});

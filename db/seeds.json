@@ -1,0 +1,27 @@
+[
+  {
+    "cuisine": "Indian",
+    "restaurant": "Rasoi",
+    "location": "1810 K St NW, Washington, DC 20006"
+  },
+  {
+    "cuisine": "Mexican",
+    "restaurant": "District Taco",
+    "location": "1919 M St NW, Washington, DC 20036"
+  },
+  {
+    "cuisine": "American",
+    "restaurant": "Red Lobster",
+    "location": "8533 Georgia Ave, Silver Spring, MD 20910"
+  },
+  {
+    "cuisine": "Chinese",
+    "restaurant": "Sichuan Pavilion",
+    "location": "1814 K St NW, Washington, DC 20006"
+  },
+  {
+    "cuisine": "Thai",
+    "restaurant": "Mai Thai LLC",
+    "location": "1200 19th St NW, Washington, DC 20036"
+  }
+]
