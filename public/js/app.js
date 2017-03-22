@@ -1,5 +1,5 @@
 angular
-  .module("whenPresident", [
+  .module("foodcuisines", [
     "ui.router",
     "ngResource"
   ])
@@ -9,7 +9,7 @@ angular
   ])
   .factory("Food", [
     "$resource",
-    Candidate
+    FoodFactoryFunction
   ])
   .controller("indexCtrl", [
     "Food",
@@ -42,7 +42,7 @@ angular
       })
   }
 
-  function Candidate ($resource) {
+  function FoodFactoryFunction ($resource) {
     return $resource("/api/foods/:name", {}, {
       update: { method: "PUT" }
     });
