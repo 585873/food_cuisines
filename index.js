@@ -35,7 +35,7 @@ app.get("/api/foods/:cuisine", function(req, res){
 });
 
 app.post("/api/foods", function(req, res){
-  Food.create(req.body.food).then(function(food){
+  Food.create(req.body).then(function(food){
     res.json(food)
   });
 });

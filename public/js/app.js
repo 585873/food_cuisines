@@ -51,7 +51,7 @@ angular
     this.newFood = new FoodFactory()
     this.create = function(){
       this.newFood.$save().then(function(food){
-        $state.go("show", { name: food.cuisine })
+        $state.go("show", { cuisine: food.cuisine })
       })
     }
   }
