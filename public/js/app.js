@@ -58,9 +58,11 @@ angular
   function ShowControllerFunction(FoodFactory, $stateParams, $state){
     this.food = FoodFactory.get({ cuisine: $stateParams.cuisine })
     this.update = function(){
-      console.log("Updating");
-      this.food.$update({ cuisine: $stateParams.cuisine })
-      }
+      // console.log("Updating");
+      this.food.$update({ cuisine: $stateParams.cuisine }).then(function() {
+        $state.go("index")
+      })
+    }
     this.destroy = function(){
       this.food.$delete({ cuisine: $stateParams.cuisine }).then(function(){
         $state.go("index")

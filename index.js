@@ -40,14 +40,14 @@ app.post("/api/foods", function(req, res){
   });
 });
 
-app.post("/api/foods/:name/delete", function(req, res){
-  Food.findOneAndRemove({name: req.params.name}).then(function(){
-    res.json(foods)
+app.delete("/api/foods/:cuisine", function(req, res){
+  Food.findOneAndRemove({cuisine: req.params.cuisine}).then(function(){
+    res.json({ success: true})
   });
 });
 
-app.post("/api/foods/:name", function(req, res){
-  Food.findOneAndUpdate({name: req.params.name}, req.body.food, {new: true}).then(function(food){
+app.put("/api/foods/:cuisine", function(req, res){
+  Food.findOneAndUpdate({cuisine: req.params.cuisine}, req.body, {new: true}).then(function(food){
     res.json(foods)
   });
 });
