@@ -1,1 +1,16 @@
-<h2>{{vm.food.name}} for President in {{vm.food.location}} {{vm.food.restaurant}}</h2>
+<!-- <div> -->
+<h2>{{vm.food.cuisine}} for Food in {{vm.food.location}} {{vm.food.restaurant}}</h2>
+
+<p>{{vm.food.restaurant}}</p>
+<p>{{vm.food.location}}</p>
+<img src='{{vm.food.img_url}}'>
+
+<form data-ng-submit="vm.update()">
+  <input type="text" ng-model="vm.newFood.cuisine" placeholder="Cuisine">
+  <input type="text" ng-model="vm.newFood.restaurant" placeholder="Restaurant">
+  <input type="text" ng-model="vm.newFood.location" placeholder="Location">
+  <input type="text" ng-model="vm.newFood.img_url" placeholder="Image">
+  <button type="submit">Update</button>
+  <button data-ng-click="vm.destroy()">Remove Cuisine</button>
+</form>
+<!-- </div> -->

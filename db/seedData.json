@@ -2,26 +2,31 @@
   {
     "cuisine": "Indian",
     "restaurant": "Rasoi",
-    "location": "1810 K St NW, Washington, DC 20006"
+    "location": "1810 K St NW, Washington, DC 20006",
+    "img_url": "http://www.therasoirestaurant.com/wp-content/uploads/2015/03/RasoiLogoWebsite.jpg"
   },
   {
     "cuisine": "Mexican",
     "restaurant": "District Taco",
-    "location": "1919 M St NW, Washington, DC 20036"
+    "location": "1919 M St NW, Washington, DC 20036",
+    "img_url": "http://cdn.shopify.com/s/files/1/0538/3377/t/2/assets/logo.png?13013338837207287354"
   },
   {
     "cuisine": "American",
     "restaurant": "Red Lobster",
-    "location": "8533 Georgia Ave, Silver Spring, MD 20910"
+    "location": "8533 Georgia Ave, Silver Spring, MD 20910",
+    "img_url": "http://tourmorgantown.com/CVB-2016-NEW/wp-content/uploads/2015/06/red-lobster-official-logo.jpg"
   },
   {
     "cuisine": "Chinese",
     "restaurant": "Sichuan Pavilion",
-    "location": "1814 K St NW, Washington, DC 20006"
+    "location": "1814 K St NW, Washington, DC 20006",
+    "img_url": "https://sites.google.com/site/sichuanpavilion/sichuan.jpg"
   },
   {
     "cuisine": "Thai",
     "restaurant": "Mai Thai LLC",
-    "location": "1200 19th St NW, Washington, DC 20036"
+    "location": "1200 19th St NW, Washington, DC 20036",
+    "img_url": "https://9bf6ddc20002c5f1a946-ef07da46c7e506e973e0d9fa57c693df.ssl.cf1.rackcdn.com/635119378886281327+3160.png"
   }
 ]

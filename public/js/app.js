@@ -7,51 +7,63 @@ angular
     "$stateProvider",
     Router
   ])
-  .factory("Food", [
+  .factory("FoodFactory", [
     "$resource",
     FoodFactoryFunction
   ])
-  .controller("indexCtrl", [
-    "Food",
-    indexController
+  .controller("IndexController", [
+    "FoodFactory",
+    "$state",
+    IndexControllerFunction
   ])
-  .controller("showCtrl", [
+  .controller("ShowController", [
+    "FoodFactory",
     "$stateParams",
-    "Food",
-    showController
+    "$state",
+    ShowControllerFunction
   ])
-
-
-  function Router ($stateProvider) {
+  function Router($stateProvider){
     $stateProvider
-      .state("welcome", {
-        url: "/",
-        templateUrl: "/assets/js/ng-views/welcome.html"
-      })
-      .state("index", {
-        url: "/foods",
-        templateUrl: "/assets/js/ng-views/index.html",
-        controller: "indexCtrl",
-        controllerAs: "vm"
-      })
-      .state("show", {
-        url: "/foods/:name",
-        templateUrl: "/assets/js/ng-views/show.html",
-        controller: "showCtrl",
-        controllerAs: "vm"
-      })
+    .state("welcome", {
+      url: "/",
+      templateUrl: "/assets/js/ng-views/welcome.html"
+    })
+    .state("index", {
+      url: "/foods",
+      templateUrl: "/assets/js/ng-views/index.html",
+      controller: "IndexController",
+      controllerAs: "vm"
+    })
+    .state("show", {
+      url: "/foods/:cuisine",
+      templateUrl: "/assets/js/ng-views/show.html",
+      controller: "ShowController",
+      controllerAs: "vm"
+    })
   }
-
-  function FoodFactoryFunction ($resource) {
-    return $resource("/api/foods/:name", {}, {
+  function FoodFactoryFunction($resource){
+    return $resource("/api/foods/:cuisine", {}, {
       update: { method: "PUT" }
-    });
+    })
   }
-
-  function indexController (Food) {
-    this.foods = Food.query()
+  function IndexControllerFunction(FoodFactory, $state){
+    this.foods = FoodFactory.query()
+    this.newFood = new FoodFactory()
+    this.create = function(){
+      this.newFood.$save().then(function(food){
+        $state.go("show", { name: food.cuisine })
+      })
+    }
   }
-
-  function showController ($stateParams, Food) {
-    this.food = Food.get({name: $stateParams.name})
+  function ShowControllerFunction(FoodFactory, $stateParams, $state){
+    this.food = FoodFactory.get({ cuisine: $stateParams.cuisine })
+    this.update = function(){
+      console.log("Updating");
+      this.food.$update({ cuisine: $stateParams.cuisine })
+      }
+    this.destroy = function(){
+      this.food.$delete({ cuisine: $stateParams.cuisine }).then(function(){
+        $state.go("index")
+      })
+    }
   }

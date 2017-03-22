@@ -1,1 +1,20 @@
 <h2>All Cuisines</h2>
+
+<div class="foodz">
+  <p>There are {{vm.foods.length}} cuisines to choose from:</p>
+  <br>
+  <h4 data-ng-repeat = "food in vm.foods">
+      <a data-ui-sref="show({cuisine: food.cuisine})">{{food.cuisine}}</a>
+      <!-- <p>{{food.restaurant}}</p>
+      <p>{{food.location}}</p>
+      <img src='{{food.img_url}}'> -->
+  </h4>
+</div>
+
+<form ng-submit="vm.create()">
+  <input type="text" ng-model="vm.newFood.cuisine" placeholder="Cuisine">
+  <input type="text" ng-model="vm.newFood.restaurant" placeholder="Restaurant">
+  <input type="text" ng-model="vm.newFood.location" placeholder="Location">
+  <input type="text" ng-model="vm.newFood.img_url" placeholder="Image">
+  <button type="submit">Submit</button>
+</form>

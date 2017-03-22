@@ -28,8 +28,8 @@ app.get("/api/foods", function(req, res){
   });
 });
 
-app.get("/api/foods/:name", function(req, res){
-  Food.findOne({name: req.params.name}).then(function(food){
+app.get("/api/foods/:cuisine", function(req, res){
+  Food.findOne({cuisine: req.params.cuisine}).then(function(food){
     res.json(food)
   });
 });

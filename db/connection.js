@@ -4,7 +4,8 @@ var FoodSchema = new mongoose.Schema(
   {
     cuisine: String,
     restaurant: String,
-    location: String
+    location: String,
+    img_url: String
   }
 );
 
