@@ -6,11 +6,12 @@
 <img src='{{vm.food.img_url}}'>
 
 <form data-ng-submit="vm.update()">
-  <input type="text" ng-model="vm.newFood.cuisine" placeholder="Cuisine">
-  <input type="text" ng-model="vm.newFood.restaurant" placeholder="Restaurant">
-  <input type="text" ng-model="vm.newFood.location" placeholder="Location">
-  <input type="text" ng-model="vm.newFood.img_url" placeholder="Image">
+  <input type="text" ng-model="vm.food.cuisine" placeholder="Cuisine">
+  <input type="text" ng-model="vm.food.restaurant" placeholder="Restaurant">
+  <input type="text" ng-model="vm.food.location" placeholder="Location">
+  <input type="text" ng-model="vm.food.img_url" placeholder="Image">
   <button type="submit">Update</button>
   <button data-ng-click="vm.destroy()">Remove Cuisine</button>
+  <button data-ng-click="index">Remove Cuisine</button>
 </form>
 <!-- </div> -->
